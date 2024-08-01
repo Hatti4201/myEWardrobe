@@ -1,0 +1,290 @@
+<html><head><base href="https://www.mycutewardrobe.com/wardrobe">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Wardrobe - My Cute Wardrobe</title>
+<style>
+    body {
+        font-family: 'Nunito', 'Comic Sans MS', cursive, sans-serif;
+        background-color: #FFF0F5;
+        color: #8B4B8B;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    header {
+        background-color: #E6E6FA;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    h1 {
+        color: #FF69B4;
+        font-size: 2.5em;
+        margin-bottom: 10px;
+    }
+    nav {
+        margin-top: 20px;
+    }
+    nav a {
+        color: #8B4B8B;
+        text-decoration: none;
+        margin: 0 15px;
+        font-size: 1.2em;
+        transition: color 0.3s ease;
+    }
+    nav a:hover {
+        color: #FF69B4;
+    }
+    .wardrobe-controls {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    .search-bar {
+        flex-grow: 1;
+        margin-right: 20px;
+    }
+    .search-bar input {
+        width: 100%;
+        padding: 10px;
+        border: 2px solid #FF69B4;
+        border-radius: 20px;
+        font-size: 1em;
+    }
+    .filter-btn, .sort-btn {
+        background-color: #FF69B4;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1em;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    .filter-btn:hover, .sort-btn:hover {
+        background-color: #FF1493;
+    }
+    .wardrobe-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 20px;
+    }
+    .wardrobe-item {
+        background-color: #E0FFFF;
+        border-radius: 15px;
+        padding: 15px;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+    }
+    .wardrobe-item:hover {
+        transform: scale(1.05);
+    }
+    .item-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
+    .item-name {
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+    .item-category {
+        font-style: italic;
+        color: #8B4B8B;
+    }
+    .pagination {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+    }
+    .pagination button {
+        background-color: #FF69B4;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        margin: 0 5px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    .pagination button:hover {
+        background-color: #FF1493;
+    }
+    .pagination button:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+    }
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.4);
+    }
+    .modal-content {
+        background-color: #E0FFFF;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        max-width: 500px;
+        border-radius: 15px;
+    }
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    .close:hover {
+        color: #FF69B4;
+    }
+</style>
+</head>
+<body>
+    <header>
+        <h1>My Wardrobe</h1>
+        <nav>
+            <a href="https://www.mycutewardrobe.com/dashboard">Dashboard</a>
+            <a href="https://www.mycutewardrobe.com/mix-and-match">Mix & Match</a>
+            <a href="https://www.mycutewardrobe.com/upload">Upload</a>
+            <a href="https://www.mycutewardrobe.com/profile">Profile</a>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <div class="wardrobe-controls">
+            <div class="search-bar">
+                <input type="text" placeholder="Search your wardrobe...">
+            </div>
+            <button class="filter-btn">Filter</button>
+            <button class="sort-btn">Sort</button>
+        </div>
+        
+        <div class="wardrobe-grid">
+            <div class="wardrobe-item">
+                <img src="https://example.com/cute-tshirt.jpg" alt="Cute pink t-shirt with heart pattern" class="item-image">
+                <div class="item-name">Heart Pattern Tee</div>
+                <div class="item-category">Tops</div>
+            </div>
+            <div class="wardrobe-item">
+                <img src="https://example.com/floral-skirt.jpg" alt="Flowy floral skirt in pastel colors" class="item-image">
+                <div class="item-name">Pastel Floral Skirt</div>
+                <div class="item-category">Bottoms</div>
+            </div>
+            <div class="wardrobe-item">
+                <img src="https://example.com/denim-jacket.jpg" alt="Light wash denim jacket with cute patches" class="item-image">
+                <div class="item-name">Patched Denim Jacket</div>
+                <div class="item-category">Outerwear</div>
+            </div>
+            <div class="wardrobe-item">
+                <img src="https://example.com/white-sneakers.jpg" alt="Clean white sneakers with pastel accents" class="item-image">
+                <div class="item-name">Pastel Accent Sneakers</div>
+                <div class="item-category">Shoes</div>
+            </div>
+            <div class="wardrobe-item">
+                <img src="https://example.com/sundress.jpg" alt="Yellow sundress with daisy print" class="item-image">
+                <div class="item-name">Daisy Sundress</div>
+                <div class="item-category">Dresses</div>
+            </div>
+            <div class="wardrobe-item">
+                <img src="https://example.com/hair-bow.jpg" alt="Large pastel pink hair bow" class="item-image">
+                <div class="item-name">Oversized Hair Bow</div>
+                <div class="item-category">Accessories</div>
+            </div>
+            <!-- Add more wardrobe items here -->
+        </div>
+        
+        <div class="pagination">
+            <button disabled>Previous</button>
+            <button>Next</button>
+        </div>
+    </div>
+
+    <div id="filterModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Filter Options</h2>
+            <!-- Add filter options here -->
+        </div>
+    </div>
+
+    <div id="sortModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Sort Options</h2>
+            <!-- Add sort options here -->
+        </div>
+    </div>
+
+    <script>
+        // Filter and Sort button functionality
+        const filterBtn = document.querySelector('.filter-btn');
+        const sortBtn = document.querySelector('.sort-btn');
+        const filterModal = document.getElementById('filterModal');
+        const sortModal = document.getElementById('sortModal');
+        const closeBtns = document.getElementsByClassName('close');
+
+        filterBtn.onclick = function() {
+            filterModal.style.display = "block";
+        }
+
+        sortBtn.onclick = function() {
+            sortModal.style.display = "block";
+        }
+
+        for (let closeBtn of closeBtns) {
+            closeBtn.onclick = function() {
+                filterModal.style.display = "none";
+                sortModal.style.display = "none";
+            }
+        }
+
+        window.onclick = function(event) {
+            if (event.target == filterModal) {
+                filterModal.style.display = "none";
+            }
+            if (event.target == sortModal) {
+                sortModal.style.display = "none";
+            }
+        }
+
+        // Search functionality
+        const searchInput = document.querySelector('.search-bar input');
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            const wardrobeItems = document.querySelectorAll('.wardrobe-item');
+            
+            wardrobeItems.forEach(item => {
+                const itemName = item.querySelector('.item-name').textContent.toLowerCase();
+                const itemCategory = item.querySelector('.item-category').textContent.toLowerCase();
+                
+                if (itemName.includes(searchTerm) || itemCategory.includes(searchTerm)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+
+        // Pagination functionality can be added here
+
+        // You can add more interactivity here, such as:
+        // - Implementing actual filtering and sorting logic
+        // - Adding item details view on click
+        // - Implementing drag-and-drop for organizing wardrobe
+    </script>
+</body>
+</html>

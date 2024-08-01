@@ -1,0 +1,244 @@
+<html><head><base href="https://www.mycutewardrobe.com/mix-and-match">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mix & Match - My Cute Wardrobe</title>
+<style>
+    body {
+        font-family: 'Nunito', 'Comic Sans MS', cursive, sans-serif;
+        background-color: #FFF0F5;
+        color: #8B4B8B;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    header {
+        background-color: #E6E6FA;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    h1 {
+        color: #FF69B4;
+        font-size: 2.5em;
+        margin-bottom: 10px;
+    }
+    nav {
+        margin-top: 20px;
+    }
+    nav a {
+        color: #8B4B8B;
+        text-decoration: none;
+        margin: 0 15px;
+        font-size: 1.2em;
+        transition: color 0.3s ease;
+    }
+    nav a:hover {
+        color: #FF69B4;
+    }
+    .mix-match-area {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+    }
+    .wardrobe-section {
+        width: 30%;
+        background-color: #E0FFFF;
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .outfit-section {
+        width: 65%;
+        background-color: #E0FFFF;
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .wardrobe-item, .outfit-item {
+        background-color: #FFF0F5;
+        border-radius: 10px;
+        padding: 10px;
+        margin-bottom: 10px;
+        cursor: move;
+        transition: transform 0.3s ease;
+    }
+    .wardrobe-item:hover, .outfit-item:hover {
+        transform: scale(1.05);
+    }
+    .outfit-slot {
+        background-color: #FFF0F5;
+        border: 2px dashed #FF69B4;
+        border-radius: 10px;
+        height: 100px;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2em;
+        color: #FF69B4;
+    }
+    .outfit-actions {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+    .action-btn {
+        background-color: #FF69B4;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1em;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    .action-btn:hover {
+        background-color: #FF1493;
+        transform: scale(1.05);
+    }
+    .item-image {
+        width: 100%;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+</style>
+</head>
+<body>
+    <header>
+        <h1>Mix & Match</h1>
+        <nav>
+            <a href="https://www.mycutewardrobe.com/dashboard">Dashboard</a>
+            <a href="https://www.mycutewardrobe.com/wardrobe">My Wardrobe</a>
+            <a href="https://www.mycutewardrobe.com/upload">Upload</a>
+            <a href="https://www.mycutewardrobe.com/profile">Profile</a>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <div class="mix-match-area">
+            <div class="wardrobe-section">
+                <h2>Your Wardrobe</h2>
+                <div id="wardrobe-items">
+                    <div class="wardrobe-item" draggable="true" data-type="top">
+                        <img src="https://example.com/cute-tshirt.jpg" alt="Cute pink t-shirt with heart pattern" class="item-image">
+                        <p>Heart Pattern Tee</p>
+                    </div>
+                    <div class="wardrobe-item" draggable="true" data-type="bottom">
+                        <img src="https://example.com/floral-skirt.jpg" alt="Flowy floral skirt in pastel colors" class="item-image">
+                        <p>Pastel Floral Skirt</p>
+                    </div>
+                    <div class="wardrobe-item" draggable="true" data-type="outerwear">
+                        <img src="https://example.com/denim-jacket.jpg" alt="Light wash denim jacket with cute patches" class="item-image">
+                        <p>Patched Denim Jacket</p>
+                    </div>
+                    <div class="wardrobe-item" draggable="true" data-type="shoes">
+                        <img src="https://example.com/white-sneakers.jpg" alt="Clean white sneakers with pastel accents" class="item-image">
+                        <p>Pastel Accent Sneakers</p>
+                    </div>
+                    <div class="wardrobe-item" draggable="true" data-type="accessory">
+                        <img src="https://example.com/hair-bow.jpg" alt="Large pastel pink hair bow" class="item-image">
+                        <p>Oversized Hair Bow</p>
+                    </div>
+                </div>
+            </div>
+            <div class="outfit-section">
+                <h2>Create Your Outfit</h2>
+                <div id="outfit-slots">
+                    <div class="outfit-slot" data-type="top">
+                        <p>Drop Top Here</p>
+                    </div>
+                    <div class="outfit-slot" data-type="bottom">
+                        <p>Drop Bottom Here</p>
+                    </div>
+                    <div class="outfit-slot" data-type="outerwear">
+                        <p>Drop Outerwear Here</p>
+                    </div>
+                    <div class="outfit-slot" data-type="shoes">
+                        <p>Drop Shoes Here</p>
+                    </div>
+                    <div class="outfit-slot" data-type="accessory">
+                        <p>Drop Accessory Here</p>
+                    </div>
+                </div>
+                <div class="outfit-actions">
+                    <button class="action-btn" id="save-outfit">Save Outfit</button>
+                    <button class="action-btn" id="clear-outfit">Clear Outfit</button>
+                    <button class="action-btn" id="random-outfit">Random Outfit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Drag and drop functionality
+        const wardrobeItems = document.querySelectorAll('.wardrobe-item');
+        const outfitSlots = document.querySelectorAll('.outfit-slot');
+
+        wardrobeItems.forEach(item => {
+            item.addEventListener('dragstart', dragStart);
+        });
+
+        outfitSlots.forEach(slot => {
+            slot.addEventListener('dragover', dragOver);
+            slot.addEventListener('drop', drop);
+        });
+
+        function dragStart(e) {
+            e.dataTransfer.setData('text/plain', e.target.outerHTML);
+            e.dataTransfer.setData('type', e.target.dataset.type);
+        }
+
+        function dragOver(e) {
+            e.preventDefault();
+        }
+
+        function drop(e) {
+            e.preventDefault();
+            const data = e.dataTransfer.getData('text/plain');
+            const type = e.dataTransfer.getData('type');
+            
+            if (e.target.dataset.type === type) {
+                e.target.innerHTML = data;
+            }
+        }
+
+        // Button functionalities
+        const saveOutfitBtn = document.getElementById('save-outfit');
+        const clearOutfitBtn = document.getElementById('clear-outfit');
+        const randomOutfitBtn = document.getElementById('random-outfit');
+
+        saveOutfitBtn.addEventListener('click', () => {
+            alert('Outfit saved successfully!');
+            // Here you would typically send the outfit data to your server
+        });
+
+        clearOutfitBtn.addEventListener('click', () => {
+            outfitSlots.forEach(slot => {
+                slot.innerHTML = `<p>Drop ${slot.dataset.type.charAt(0).toUpperCase() + slot.dataset.type.slice(1)} Here</p>`;
+            });
+        });
+
+        randomOutfitBtn.addEventListener('click', () => {
+            outfitSlots.forEach(slot => {
+                const type = slot.dataset.type;
+                const items = Array.from(document.querySelectorAll(`.wardrobe-item[data-type="${type}"]`));
+                if (items.length > 0) {
+                    const randomItem = items[Math.floor(Math.random() * items.length)];
+                    slot.innerHTML = randomItem.outerHTML;
+                }
+            });
+        });
+
+        // You can add more interactivity here, such as:
+        // - Outfit recommendations based on weather or occasion
+        // - Color coordination suggestions
+        // - Sharing outfits with friends
+        // - Outfit rating system
+    </script>
+</body>
+</html>

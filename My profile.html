@@ -1,0 +1,237 @@
+<html><head><base href="https://www.mycutewardrobe.com/profile">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Profile - My Cute Wardrobe</title>
+<style>
+    body {
+        font-family: 'Nunito', 'Comic Sans MS', cursive, sans-serif;
+        background-color: #FFF0F5;
+        color: #8B4B8B;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    header {
+        background-color: #E6E6FA;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    h1 {
+        color: #FF69B4;
+        font-size: 2.5em;
+        margin-bottom: 10px;
+    }
+    nav {
+        margin-top: 20px;
+    }
+    nav a {
+        color: #8B4B8B;
+        text-decoration: none;
+        margin: 0 15px;
+        font-size: 1.2em;
+        transition: color 0.3s ease;
+    }
+    nav a:hover {
+        color: #FF69B4;
+    }
+    .profile-container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+    }
+    .profile-info {
+        width: 30%;
+        background-color: #E0FFFF;
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .profile-stats {
+        width: 65%;
+        background-color: #E0FFFF;
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .profile-picture {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin: 0 auto 20px;
+        display: block;
+        object-fit: cover;
+        border: 5px solid #FF69B4;
+    }
+    .profile-name {
+        font-size: 1.5em;
+        text-align: center;
+        margin-bottom: 10px;
+        color: #FF69B4;
+    }
+    .profile-username {
+        font-size: 1.2em;
+        text-align: center;
+        margin-bottom: 20px;
+        color: #8B4B8B;
+    }
+    .profile-bio {
+        text-align: center;
+        margin-bottom: 20px;
+        font-style: italic;
+    }
+    .edit-profile-btn {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #FF69B4;
+        color: white;
+        border: none;
+        border-radius: 20px;
+        font-size: 1em;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    .edit-profile-btn:hover {
+        background-color: #FF1493;
+    }
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    .stat-card {
+        background-color: #FFF0F5;
+        border-radius: 10px;
+        padding: 15px;
+        text-align: center;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .stat-number {
+        font-size: 2em;
+        color: #FF69B4;
+        margin-bottom: 5px;
+    }
+    .stat-label {
+        font-size: 1em;
+        color: #8B4B8B;
+    }
+    .activity-feed {
+        margin-top: 30px;
+        background-color: #E0FFFF;
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .activity-feed h2 {
+        color: #FF69B4;
+        margin-bottom: 15px;
+    }
+    .activity-item {
+        background-color: #FFF0F5;
+        border-radius: 10px;
+        padding: 15px;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+    }
+    .activity-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 15px;
+    }
+    .activity-details {
+        flex-grow: 1;
+    }
+    .activity-time {
+        font-size: 0.9em;
+        color: #8B4B8B;
+    }
+</style>
+</head>
+<body>
+    <header>
+        <h1>My Profile</h1>
+        <nav>
+            <a href="https://www.mycutewardrobe.com/dashboard">Dashboard</a>
+            <a href="https://www.mycutewardrobe.com/wardrobe">My Wardrobe</a>
+            <a href="https://www.mycutewardrobe.com/mix-and-match">Mix & Match</a>
+            <a href="https://www.mycutewardrobe.com/upload">Upload</a>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <div class="profile-container">
+            <div class="profile-info">
+                <img src="https://example.com/profile-picture.jpg" alt="Profile Picture" class="profile-picture">
+                <h2 class="profile-name">Sophia Johnson</h2>
+                <p class="profile-username">@fashionista_sophia</p>
+                <p class="profile-bio">Fashion enthusiast | Mixing cute and chic | Always on the hunt for the perfect outfit</p>
+                <button class="edit-profile-btn">Edit Profile</button>
+            </div>
+            <div class="profile-stats">
+                <h2>My Wardrobe Stats</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">156</div>
+                        <div class="stat-label">Total Items</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">42</div>
+                        <div class="stat-label">Outfits Created</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">28</div>
+                        <div class="stat-label">Favorite Combinations</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">7</div>
+                        <div class="stat-label">Style Categories</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="activity-feed">
+            <h2>Recent Activity</h2>
+            <div class="activity-item">
+                <img src="https://example.com/upload-icon.png" alt="Upload Icon" class="activity-icon">
+                <div class="activity-details">
+                    <p>You added a new item to your wardrobe: Pink Floral Sundress</p>
+                    <p class="activity-time">2 hours ago</p>
+                </div>
+            </div>
+            <div class="activity-item">
+                <img src="https://example.com/outfit-icon.png" alt="Outfit Icon" class="activity-icon">
+                <div class="activity-details">
+                    <p>You created a new outfit: Summer Picnic Look</p>
+                    <p class="activity-time">1 day ago</p>
+                </div>
+            </div>
+            <div class="activity-item">
+                <img src="https://example.com/favorite-icon.png" alt="Favorite Icon" class="activity-icon">
+                <div class="activity-details">
+                    <p>You added "Casual Chic" to your favorite combinations</p>
+                    <p class="activity-time">3 days ago</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('.edit-profile-btn').addEventListener('click', function() {
+            alert('Edit profile functionality coming soon!');
+        });
+
+        // You can add more interactivity here, such as:
+        // - Fetching and displaying real user data
+        // - Implementing profile editing functionality
+        // - Adding animations or transitions for a more dynamic feel
+    </script>
+</body>
+</html>

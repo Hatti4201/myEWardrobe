@@ -1,0 +1,209 @@
+<html><head><base href="https://www.mycutewardrobe.com/upload">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Upload New Item - My Cute Wardrobe</title>
+<style>
+    body {
+        font-family: 'Nunito', 'Comic Sans MS', cursive, sans-serif;
+        background-color: #FFF0F5;
+        color: #8B4B8B;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    header {
+        background-color: #E6E6FA;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    h1 {
+        color: #FF69B4;
+        font-size: 2.5em;
+        margin-bottom: 10px;
+    }
+    nav {
+        margin-top: 20px;
+    }
+    nav a {
+        color: #8B4B8B;
+        text-decoration: none;
+        margin: 0 15px;
+        font-size: 1.2em;
+        transition: color 0.3s ease;
+    }
+    nav a:hover {
+        color: #FF69B4;
+    }
+    .upload-form {
+        background-color: #E0FFFF;
+        border-radius: 15px;
+        padding: 30px;
+        margin-top: 30px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .form-group {
+        margin-bottom: 20px;
+    }
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+    input[type="text"],
+    input[type="file"],
+    select,
+    textarea {
+        width: 100%;
+        padding: 10px;
+        border: 2px solid #FF69B4;
+        border-radius: 10px;
+        font-size: 1em;
+        font-family: inherit;
+    }
+    input[type="file"] {
+        border: none;
+        padding: 10px 0;
+    }
+    select {
+        appearance: none;
+        background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23FF69B4%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
+        background-repeat: no-repeat;
+        background-position: right 10px top 50%;
+        background-size: 12px auto;
+    }
+    textarea {
+        resize: vertical;
+        min-height: 100px;
+    }
+    .submit-btn {
+        background-color: #FF69B4;
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        font-size: 1.2em;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        display: block;
+        margin: 30px auto 0;
+    }
+    .submit-btn:hover {
+        background-color: #FF1493;
+        transform: scale(1.05);
+    }
+    #preview-container {
+        text-align: center;
+        margin-top: 20px;
+    }
+    #image-preview {
+        max-width: 100%;
+        max-height: 300px;
+        border-radius: 10px;
+        display: none;
+    }
+</style>
+</head>
+<body>
+    <header>
+        <h1>Upload New Item</h1>
+        <nav>
+            <a href="https://www.mycutewardrobe.com/dashboard">Dashboard</a>
+            <a href="https://www.mycutewardrobe.com/wardrobe">My Wardrobe</a>
+            <a href="https://www.mycutewardrobe.com/mix-and-match">Mix & Match</a>
+            <a href="https://www.mycutewardrobe.com/profile">Profile</a>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <form class="upload-form" id="upload-form">
+            <div class="form-group">
+                <label for="item-name">Item Name:</label>
+                <input type="text" id="item-name" name="item-name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="item-category">Category:</label>
+                <select id="item-category" name="item-category" required>
+                    <option value="">Select a category</option>
+                    <option value="tops">Tops</option>
+                    <option value="bottoms">Bottoms</option>
+                    <option value="dresses">Dresses</option>
+                    <option value="outerwear">Outerwear</option>
+                    <option value="shoes">Shoes</option>
+                    <option value="accessories">Accessories</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="item-color">Color:</label>
+                <input type="text" id="item-color" name="item-color" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="item-brand">Brand (optional):</label>
+                <input type="text" id="item-brand" name="item-brand">
+            </div>
+            
+            <div class="form-group">
+                <label for="item-description">Description:</label>
+                <textarea id="item-description" name="item-description" required></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="item-image">Upload Image:</label>
+                <input type="file" id="item-image" name="item-image" accept="image/*" required>
+            </div>
+            
+            <div id="preview-container">
+                <img id="image-preview" alt="Image preview" src="">
+            </div>
+            
+            <button type="submit" class="submit-btn">Add to Wardrobe</button>
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById('upload-form');
+        const imageInput = document.getElementById('item-image');
+        const imagePreview = document.getElementById('image-preview');
+
+        // Image preview functionality
+        imageInput.addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    imagePreview.src = e.target.result;
+                    imagePreview.style.display = 'inline-block';
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Form submission
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // Here you would typically send the form data to your server
+            // For this example, we'll just show an alert
+            alert('Item added to your wardrobe!');
+            
+            // Reset form and preview
+            form.reset();
+            imagePreview.src = '';
+            imagePreview.style.display = 'none';
+        });
+
+        // You can add more interactivity here, such as:
+        // - Form validation
+        // - Auto-suggesting categories based on item name
+        // - Color picker integration
+        // - Brand auto-complete from a predefined list
+    </script>
+</body>
+</html>
